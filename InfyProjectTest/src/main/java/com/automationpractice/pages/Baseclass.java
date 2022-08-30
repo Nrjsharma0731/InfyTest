@@ -1,13 +1,14 @@
 package com.automationpractice.pages;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Baseclass 
 {
@@ -17,11 +18,11 @@ public class Baseclass
 	public Baseclass() throws Exception
 	{
 		pro=new Properties();
-		FileInputStream file= new FileInputStream("D:\\Practice Workspace\\InfyProjectTest\\src\\main\\java\\com\\automationpractice\\config\\config.properties");
+		FileInputStream file= new FileInputStream("src/main/java/com/automationpractice/config/config.properties");
 		
 		pro.load(file);
 	}
-public static void launchApp()
+public static void launchApp() 
 {
 	String browsername=pro.getProperty("browser");
 	
@@ -30,10 +31,13 @@ public static void launchApp()
 		System.setProperty("webdriver.chrome.driver", "D:\\Automation\\Drivers\\chromedriver.exe");
 		driver= new ChromeDriver();
 	}
-	else if(browsername.equals("IEDriverServer"))
+	else if(browsername.equals("IE"))
 	{
 		System.setProperty("webdriver.ie.driver", "D:\\Automation\\Drivers\\IEDriverServer.exe");
-		driver= new InternetExplorerDriver();
+		InternetExplorerOptions capabilities = new InternetExplorerOptions();
+		capabilities.ignoreZoomSettings();
+		driver = new InternetExplorerDriver(capabilities);
+			
 	}
 	
 	driver.manage().window().maximize();

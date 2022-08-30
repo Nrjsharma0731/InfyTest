@@ -55,7 +55,7 @@ public class ARegister extends Baseclass
 	{
 		driver.findElement(By.xpath(pro.getProperty("emailbox"))).sendKeys(pro.getProperty("useremail"));
 		driver.findElement(By.xpath(pro.getProperty("SubmitCreate"))).click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		String createpage=driver.findElement(By.xpath(pro.getProperty("verifyCreatepage"))).getText();
 		if(createpage.equalsIgnoreCase(pro.getProperty("textCreatepage")))
 		{
@@ -85,8 +85,6 @@ public class ARegister extends Baseclass
 	    Dropdowns.handlebyvalue(year, "2000");
 	    driver.findElement(By.xpath(pro.getProperty("newsletter"))).click();
 	    driver.findElement(By.xpath(pro.getProperty("offers"))).click();
-	    //driver.findElement(By.xpath("addfirstname")).sendKeys(pro.getProperty("userfirst"));
-	    //driver.findElement(By.xpath("addlastname")).sendKeys(pro.getProperty("userlast"));
 	    driver.findElement(By.xpath(pro.getProperty("company"))).sendKeys(pro.getProperty("companyname"));
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("window.scrollBy(0,250)", "");

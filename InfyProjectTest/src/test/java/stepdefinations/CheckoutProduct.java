@@ -64,6 +64,7 @@ public class CheckoutProduct extends Baseclass
 	    WebElement products= driver.findElement(By.xpath(pro.getProperty("products")));
 	    products.click();
 	    driver.findElement(By.xpath(pro.getProperty("addcart"))).click();
+	    Thread.sleep(1000);
 	    driver.findElement(By.xpath(pro.getProperty("proceed"))).click();
 	    
 	    
@@ -108,6 +109,7 @@ public class CheckoutProduct extends Baseclass
 	    }
 	    else
 	    	System.out.println("Product is not same");
+	    driver.close();
 	}
 
 }
