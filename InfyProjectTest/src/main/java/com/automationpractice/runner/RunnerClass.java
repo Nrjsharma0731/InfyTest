@@ -7,14 +7,12 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="D:\\Practice Workspace\\InfyProjectTest\\src\\main\\java\\Features",
-		glue= {"stepdefinations"},
-		strict = true,
+		features=("src/main/java/Features"),
+		glue= ("stepdefinations"),
 		dryRun = false,
-		tags= "( @tag1, @tag2)"
-	
+		format = {"pretty", "html:target/Destination"}
 		)
 
-public class RunnerClass {
+public class RunnerClass  {
 
 }

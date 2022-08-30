@@ -1,7 +1,6 @@
- @tag2 
+@tag
 Feature: B Checkout some product to buy
-
-
+@tag2
   Scenario: Add a product to cart
     Given user is on login page
     When user login in the app
