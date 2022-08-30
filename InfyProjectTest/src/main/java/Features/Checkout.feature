@@ -1,4 +1,3 @@
-
  @tag2 
 Feature: B Checkout some product to buy
 
@@ -10,5 +9,3 @@ Feature: B Checkout some product to buy
     And user proceed to checkout
     Then user go to payment page
     And verify the selected product
-
-  

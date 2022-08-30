@@ -1,4 +1,3 @@
-
  @tag1
 Feature: A Register for new user
   
@@ -10,6 +9,3 @@ Feature: A Register for new user
     When Create Account by entering email address
     And Enter details on the Your Personal Information
     Then User account is created and logged in app
-    
-
- 
